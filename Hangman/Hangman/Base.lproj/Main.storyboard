@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Wbt-DI-GsX">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Game View Controller-->
@@ -14,13 +15,116 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2WQ-5y-pFb">
+                                <frame key="frameInset" minX="110" minY="104" width="155" height="166"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="icGuess" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ko2-oA-XeC">
+                                <frame key="frameInset" minX="67" minY="384" width="240" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="eGuess" borderStyle="line" placeholder="Input a letter!" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XPd-dx-9UP">
+                                <frame key="frameInset" minX="67" minY="475" width="240" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="cGuess" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EcL-3j-pDI">
+                                <frame key="frameInset" minX="67" minY="340" width="240" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kc5-9b-8zI">
+                                <frame key="frameInset" minX="157" minY="608" width="60" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Replay?"/>
+                                <connections>
+                                    <action selector="refresh:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GdJ-o5-6ey"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E9M-bo-jZT">
+                                <frame key="frameInset" minX="67" minY="526" width="240" height="74"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="46"/>
+                                <state key="normal" title="Guess!"/>
+                                <connections>
+                                    <action selector="runGuess:" destination="BYZ-38-t0r" eventType="touchUpInside" id="969-rM-8Pk"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="EcL-3j-pDI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Lnw-1F-wPP"/>
+                            <constraint firstItem="2WQ-5y-pFb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Mhy-q3-PmE"/>
+                            <constraint firstItem="ko2-oA-XeC" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="343" id="Pko-hG-jgj"/>
+                            <constraint firstItem="XPd-dx-9UP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="SGT-jl-O0Y"/>
+                            <constraint firstItem="E9M-bo-jZT" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="520" id="VAW-7c-8Jq"/>
+                            <constraint firstItem="EcL-3j-pDI" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="243" id="YcZ-Qm-3AW"/>
+                            <constraint firstItem="kc5-9b-8zI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="d9k-2S-plm"/>
+                            <constraint firstItem="E9M-bo-jZT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jMb-bD-xgy"/>
+                            <constraint firstItem="XPd-dx-9UP" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="480" id="jmT-7g-b9y"/>
+                            <constraint firstItem="kc5-9b-8zI" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="640" id="nAx-I1-dS7"/>
+                            <constraint firstItem="2WQ-5y-pFb" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="58" id="qI5-jL-pBg"/>
+                            <constraint firstItem="ko2-oA-XeC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="u6f-gE-PLw"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cGuess" destination="EcL-3j-pDI" id="CuD-fz-68M"/>
+                        <outlet property="entGuess" destination="XPd-dx-9UP" id="UUM-x7-jOz"/>
+                        <outlet property="icGuess" destination="ko2-oA-XeC" id="ZD7-oa-r9L"/>
+                        <outlet property="image" destination="2WQ-5y-pFb" id="Sbo-fj-SvA"/>
+                        <outlet property="runGuess" destination="E9M-bo-jZT" id="g99-nE-llE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="135.19999999999999" y="138.0809595202399"/>
+        </scene>
+        <!--Start Screen View Controller-->
+        <scene sceneID="Bhm-dF-HtC">
+            <objects>
+                <viewController title="Start Screen View Controller" id="Wbt-DI-GsX" customClass="StartScreenViewController" customModule="Hangman" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Gev-fh-TR0"/>
+                        <viewControllerLayoutGuide type="bottom" id="JSC-VI-LSI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="U9k-g7-MDK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Let's Play Hangman!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ihz-JJ-qrJ">
+                                <frame key="frameInset" minX="16" minY="257" width="343" height="110"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ytG-6O-5R0">
+                                <frame key="frameInset" minX="112" minY="530" width="151" height="84"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="New Game"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="9YC-Pm-Cag"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ytG-6O-5R0" firstAttribute="centerX" secondItem="U9k-g7-MDK" secondAttribute="centerX" id="Awx-Qj-r06"/>
+                            <constraint firstItem="ytG-6O-5R0" firstAttribute="centerX" secondItem="U9k-g7-MDK" secondAttribute="centerX" id="PAU-aM-gv8"/>
+                            <constraint firstItem="Ihz-JJ-qrJ" firstAttribute="centerX" secondItem="U9k-g7-MDK" secondAttribute="centerX" id="Xvf-oF-1M0"/>
+                            <constraint firstItem="ytG-6O-5R0" firstAttribute="top" secondItem="Gev-fh-TR0" secondAttribute="bottom" constant="463" id="bD9-sA-lad"/>
+                            <constraint firstItem="Ihz-JJ-qrJ" firstAttribute="top" secondItem="Gev-fh-TR0" secondAttribute="bottom" constant="237" id="io4-on-SBF"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GOA-Wn-nKp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="996" y="138.98050974512745"/>
         </scene>
     </scenes>
 </document>
